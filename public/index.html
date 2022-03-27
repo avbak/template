@@ -2,62 +2,231 @@
 <html lang="ru">
 
 <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreenPlayer</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenPlayer</title>
+
+
+  <style>
+    :root {
+      --elem-color: rgb(15, 24, 29);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .app {
+      display: grid;
+      height: 100vh;
+      overflow: hidden;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content 1fr min-content;
+      font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .fas {
+      color: white;
+    }
+
+    .header {
+      background-color: var(--elem-color);
+      grid-column: 1/3;
+      font-size: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100vw;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      padding: 5px;
+      color: rgb(83, 187, 42)
+    }
+
+    .logo-icon {
+      margin-top: 3px;
+      margin-right: 10px;
+      color: rgb(83, 187, 42)
+    }
+
+    .user-logo {
+      margin-right: 10px;
+    }
+
+    .main {
+      background: linear-gradient(to top right, rgb(83, 187, 42), rgb(211, 211, 211));
+      max-width: 100vw;
+    }
+
+    .search-div {
+      padding-top: 50px;
+      text-align: center;
+    }
+
+    .search {
+      width: 80%;
+      border: 0px;
+      border-radius: 10px 10px 10px 10px;
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .trending {
+      text-align: center;
+      margin-top: 10%;
+      color: var(--elem-color);
+    }
+
+    .albums-list {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .album {
+      border: 1px solid var(--elem-color);
+      color: var(--elem-color);
+      background-size: cover;
+      background-position: center;
+      width: 15vw;
+      height: 15vw;
+    }
+
+    .album-caption {
+      text-align: center;
+      margin-top: 15vw;
+      font-size: 16px;
+    }
+
+    .album-author {
+      text-align: center;
+      font-size: 16px;
+    }
+
+    #a1 {
+      background-image: url("./img/1.jpg");
+    }
+
+    #a2 {
+      background-image: url("./img/2.jpg");
+    }
+
+    #a3 {
+      background-image: url("./img/3.jpg");
+    }
+
+    #a4 {
+      background-image: url("./img/4.jpg");
+    }
+
+    #a5 {
+      background-image: url("./img/5.jpg");
+    }
+
+    .footer {
+      background-color: var(--elem-color);
+      grid-column: 1/3;
+    }
+
+    .foot-nav {
+      display: flex;
+      justify-content: center;
+      max-width: 100vw;
+    }
+
+    .player {
+      display: flex;
+      padding: 7px 0 7px 0;
+    }
+
+    .player-item {
+      margin-left: 25px;
+      padding: 5px;
+    }
+
+    @media (max-width: 500px) {
+      .album-author {
+        font-size: 14px;
+      }
+
+      .album-caption {
+        font-size: 14px
+      }
+
+      .search {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body class="app">
-    <header class="header">
-        <a href="#" class="logo">
-            <i class="fas fa-music logo-icon"></i>
-            <h3 class="red logo-text">GreenPlayer</h3>
-        </a>
-        <a href="#"><i class="fas fa-user-circle user-logo"></i></a>
-    </header>
+  <header class="header">
+    <a href="#" class="logo">
+      <i class="fas fa-music logo-icon"></i>
+      <h3 class="red logo-text">GreenPlayer</h3>
+    </a>
+    <a href="#"><i class="fas fa-user-circle user-logo"></i></a>
+  </header>
 
-    <main class="main">
-        <div class="search-div">
-            <input class="search" type="text" placeholder="Давайте поищем музыку..." />
-        </div>
-        <h2 class="trending">Сейчас популярно: </h2>
-        <div class="albums-list">
-            <div class="album" id="a1">
-                <div class="album-caption"><b>Вечный жид</b></div>
-                <div class="album-author">Oxxxymiron</div>
-            </div>
-            <div class="album" id="a2">
-                <div class="album-caption"><b>Долгий путь домой</b></div>
-                <div class="album-author">Oxxxymiron</div>
-            </div>
-            <div class="album" id="a3">
-                <div class="album-caption"><b>Горгород</b></div>
-                <div class="album-author">Oxxxymiron</div>
-            </div>
-            <div class="album" id="a4">
-                <div class="album-caption"><b>Смутное время</b></div>
-                <div class="album-author">Oxxxymiron</div>
-            </div>
-            <div class="album" id="a5">
-                <div class="album-caption"><b>Красота и уродство</b></div>
-                <div class="album-author">Oxxxymiron</div>
-            </div>
-        </div>
-    </main>
+  <main class="main">
+    <div class="search-div">
+      <input class="search" type="text" placeholder="Давайте поищем музыку..." />
+    </div>
+    <h2 class="trending">Сейчас популярно: </h2>
+    <div class="albums-list">
+      <div class="album" id="a1">
+        <div class="album-caption"><b>Вечный жид</b></div>
+        <div class="album-author">Oxxxymiron</div>
+      </div>
+      <div class="album" id="a2">
+        <div class="album-caption"><b>Долгий путь домой</b></div>
+        <div class="album-author">Oxxxymiron</div>
+      </div>
+      <div class="album" id="a3">
+        <div class="album-caption"><b>Горгород</b></div>
+        <div class="album-author">Oxxxymiron</div>
+      </div>
+      <div class="album" id="a4">
+        <div class="album-caption"><b>Смутное время</b></div>
+        <div class="album-author">Oxxxymiron</div>
+      </div>
+      <div class="album" id="a5">
+        <div class="album-caption"><b>Красота и уродство</b></div>
+        <div class="album-author">Oxxxymiron</div>
+      </div>
+    </div>
+  </main>
 
-    <footer class="footer">
-        <nav class="foot-nav">
-            <ul class="player">
-                <li class="player-item"><a href="#"><i class="fas fa-random"></i></a></li>
-                <li class="player-item"><a href="#"><i class="fas fa-step-backward"></i></i></a></li>
-                <li class="player-item"><a href="#"><i class="fas fa-play-circle"></i></a></li>
-                <li class="player-item"><a href="#"><i class="fas fa-step-forward"></i></a></li>
-                <li class="player-item"><a href="#"><i class="fas fa-redo"></i></a></li>
-            </ul>
-        </nav>
-    </footer>
+  <footer class="footer">
+    <nav class="foot-nav">
+      <ul class="player">
+        <li class="player-item"><a href="#"><i class="fas fa-random"></i></a></li>
+        <li class="player-item"><a href="#"><i class="fas fa-step-backward"></i></i></a></li>
+        <li class="player-item"><a href="#"><i class="fas fa-play-circle"></i></a></li>
+        <li class="player-item"><a href="#"><i class="fas fa-step-forward"></i></a></li>
+        <li class="player-item"><a href="#"><i class="fas fa-redo"></i></a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 
 </html>
