@@ -7,7 +7,7 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: min-content 1fr min-content;
 	font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	--darl-color: rgb(20, 20, 20);
+	--dark-color: rgb(20, 20, 20);
 	--green-color: rgb(120, 185, 65);
 }
 
@@ -20,7 +20,7 @@
 	grid-column: 1/3;
 	display: flex;
 	justify-content: space-between;
-	background-color: var(--darl-color);
+	background-color: var(--dark-color);
 }
 
 .logo_block {
@@ -64,7 +64,7 @@
 .trending_caption {
 	text-align: center;
 	margin-top: 10vh;
-	color: var(--darl-color);
+	color: var(--dark-color);
 }
 
 .albums_list {
@@ -74,7 +74,7 @@
 }
 
 .album {
-	border: 1px solid var(--darl-color);
+	border: 1px solid var(--dark-color);
 	background-size: cover;
 	background-position: center;
 	width: 15vw;
@@ -114,7 +114,7 @@
 
 
 .app_footer {
-	background-color: var(--darl-color);
+	background-color: var(--dark-color);
 	grid-column: 1/3;
 }
 
